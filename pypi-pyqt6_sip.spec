@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pyqt6_sip
-Version  : 13.5.0
-Release  : 81
-URL      : https://files.pythonhosted.org/packages/23/fd/530e274c4d7d39645478156063de266d7d3c1fb70ba9f38372a75094ed51/PyQt6_sip-13.5.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/23/fd/530e274c4d7d39645478156063de266d7d3c1fb70ba9f38372a75094ed51/PyQt6_sip-13.5.0.tar.gz
+Version  : 13.5.1
+Release  : 82
+URL      : https://files.pythonhosted.org/packages/2b/b4/87241bb21832cda1061805492ca2a5fd9d18969ea72277bb9fde94228962/PyQt6_sip-13.5.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2b/b4/87241bb21832cda1061805492ca2a5fd9d18969ea72277bb9fde94228962/PyQt6_sip-13.5.1.tar.gz
 Summary  : The sip module support for PyQt6
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -74,10 +74,10 @@ python3 components for the pypi-pyqt6_sip package.
 
 
 %prep
-%setup -q -n PyQt6_sip-13.5.0
-cd %{_builddir}/PyQt6_sip-13.5.0
+%setup -q -n PyQt6_sip-13.5.1
+cd %{_builddir}/PyQt6_sip-13.5.1
 pushd ..
-cp -a PyQt6_sip-13.5.0 buildavx2
+cp -a PyQt6_sip-13.5.1 buildavx2
 popd
 
 %build
@@ -85,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681145097
+export SOURCE_DATE_EPOCH=1682003376
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
