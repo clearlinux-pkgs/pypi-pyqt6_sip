@@ -5,14 +5,12 @@
 #
 Name     : pypi-pyqt6_sip
 Version  : 13.5.1
-Release  : 82
+Release  : 83
 URL      : https://files.pythonhosted.org/packages/2b/b4/87241bb21832cda1061805492ca2a5fd9d18969ea72277bb9fde94228962/PyQt6_sip-13.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2b/b4/87241bb21832cda1061805492ca2a5fd9d18969ea72277bb9fde94228962/PyQt6_sip-13.5.1.tar.gz
 Summary  : The sip module support for PyQt6
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
-Requires: pypi-pyqt6_sip-filemap = %{version}-%{release}
-Requires: pypi-pyqt6_sip-lib = %{version}-%{release}
 Requires: pypi-pyqt6_sip-license = %{version}-%{release}
 Requires: pypi-pyqt6_sip-python = %{version}-%{release}
 Requires: pypi-pyqt6_sip-python3 = %{version}-%{release}
@@ -26,24 +24,6 @@ sip Extension Module
 ====================
 The sip extension module provides support for the PyQt6
 package.
-
-%package filemap
-Summary: filemap components for the pypi-pyqt6_sip package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-pyqt6_sip package.
-
-
-%package lib
-Summary: lib components for the pypi-pyqt6_sip package.
-Group: Libraries
-Requires: pypi-pyqt6_sip-license = %{version}-%{release}
-Requires: pypi-pyqt6_sip-filemap = %{version}-%{release}
-
-%description lib
-lib components for the pypi-pyqt6_sip package.
-
 
 %package license
 Summary: license components for the pypi-pyqt6_sip package.
@@ -65,7 +45,6 @@ python components for the pypi-pyqt6_sip package.
 %package python3
 Summary: python3 components for the pypi-pyqt6_sip package.
 Group: Default
-Requires: pypi-pyqt6_sip-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(pyqt6_sip)
 
@@ -85,15 +64,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682003376
+export SOURCE_DATE_EPOCH=1683046611
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
@@ -129,14 +108,6 @@ popd
 %files
 %defattr(-,root,root,-)
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-pyqt6_sip
-
-%files lib
-%defattr(-,root,root,-)
-/usr/share/clear/optimized-elf/other*
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-pyqt6_sip/2136dbc93e95a70deae070e44ff6b2702ec1599c
@@ -147,4 +118,5 @@ popd
 
 %files python3
 %defattr(-,root,root,-)
+/V3/usr/lib/python3*/*
 /usr/lib/python3*/*
