@@ -5,7 +5,7 @@
 #
 Name     : pypi-pyqt6_sip
 Version  : 13.5.1
-Release  : 83
+Release  : 84
 URL      : https://files.pythonhosted.org/packages/2b/b4/87241bb21832cda1061805492ca2a5fd9d18969ea72277bb9fde94228962/PyQt6_sip-13.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2b/b4/87241bb21832cda1061805492ca2a5fd9d18969ea72277bb9fde94228962/PyQt6_sip-13.5.1.tar.gz
 Summary  : The sip module support for PyQt6
@@ -15,6 +15,8 @@ Requires: pypi-pyqt6_sip-license = %{version}-%{release}
 Requires: pypi-pyqt6_sip-python = %{version}-%{release}
 Requires: pypi-pyqt6_sip-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(wheel)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -64,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683046611
+export SOURCE_DATE_EPOCH=1685549799
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
