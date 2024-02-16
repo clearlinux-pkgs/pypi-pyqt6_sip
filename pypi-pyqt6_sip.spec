@@ -5,7 +5,7 @@
 #
 Name     : pypi-pyqt6_sip
 Version  : 13.6.0
-Release  : 89
+Release  : 90
 URL      : https://files.pythonhosted.org/packages/98/23/e54e02a44afc357ccab1b88575b90729664164358ceffde43e4f2e549daa/PyQt6_sip-13.6.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/98/23/e54e02a44afc357ccab1b88575b90729664164358ceffde43e4f2e549daa/PyQt6_sip-13.6.0.tar.gz
 Summary  : The sip module support for PyQt6
