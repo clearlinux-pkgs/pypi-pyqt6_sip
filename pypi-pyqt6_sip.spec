@@ -6,10 +6,10 @@
 # autospec commit: 5424026
 #
 Name     : pypi-pyqt6_sip
-Version  : 13.9.0
-Release  : 108
-URL      : https://files.pythonhosted.org/packages/e5/9e/ae81ae863dc5424b2a7f3d1dd575b6bd4a021470ff5ceae0da4c7c70f874/PyQt6_sip-13.9.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/e5/9e/ae81ae863dc5424b2a7f3d1dd575b6bd4a021470ff5ceae0da4c7c70f874/PyQt6_sip-13.9.0.tar.gz
+Version  : 13.9.1
+Release  : 109
+URL      : https://files.pythonhosted.org/packages/2a/e4/f39ca1fd6de7d4823d964a3ec33e85b6f51a9c2a7a1e95956b7a92c8acc9/pyqt6_sip-13.9.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2a/e4/f39ca1fd6de7d4823d964a3ec33e85b6f51a9c2a7a1e95956b7a92c8acc9/pyqt6_sip-13.9.1.tar.gz
 Summary  : The sip module support for PyQt6
 Group    : Development/Tools
 License  : BSD-2-Clause
@@ -18,7 +18,6 @@ Requires: pypi-pyqt6_sip-python = %{version}-%{release}
 Requires: pypi-pyqt6_sip-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(setuptools)
-BuildRequires : pypi(wheel)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -57,10 +56,10 @@ python3 components for the pypi-pyqt6_sip package.
 
 
 %prep
-%setup -q -n PyQt6_sip-13.9.0
-cd %{_builddir}/PyQt6_sip-13.9.0
+%setup -q -n pyqt6_sip-13.9.1
+cd %{_builddir}/pyqt6_sip-13.9.1
 pushd ..
-cp -a PyQt6_sip-13.9.0 buildavx2
+cp -a pyqt6_sip-13.9.1 buildavx2
 popd
 
 %build
@@ -68,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1733583050
+export SOURCE_DATE_EPOCH=1735098590
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -114,7 +113,7 @@ LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pyqt6_sip
-cp %{_builddir}/PyQt6_sip-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pyqt6_sip/f7c7e5e6fd5637c6adc626aef3ed1d1bcb5afe3f || :
+cp %{_builddir}/pyqt6_sip-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pyqt6_sip/f7c7e5e6fd5637c6adc626aef3ed1d1bcb5afe3f || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
